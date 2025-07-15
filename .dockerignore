@@ -1,0 +1,6 @@
+/.git*
+/.vscode
+/LICENSE
+/Makefile
+/README.md
+/venv

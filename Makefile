@@ -28,7 +28,7 @@ routes: venv ## list routes
 .PHONY: routes
 
 serve: venv ## run a hot-reloading development server
-	@$(QUART) --debug --app flaskr run --host localhost --port 2505 --reload
+	@$(QUART) --debug --app flaskr run --host localhost --port 5000 --reload
 .PHONY: serve
 
 clean: ## clean up build directories and cache files

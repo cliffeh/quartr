@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "flaskr"
 version = "0.0.1"
 dependencies = ["quart==0.20.0"]
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 maintainers = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 description = "Terraform Workspace Manager"
@@ -18,7 +18,7 @@ dev = ["black", "flake8", "mypy", "isort", "pytest"]
 
 [tool.black]
 line-length = 88
-target-version = ["py38"]
+target-version = ["py312"]
 
 [tool.isort]
 profile = "black"
