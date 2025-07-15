@@ -1,2 +1,3 @@
-# quart-template
+# quartr
+
 a quart template repo

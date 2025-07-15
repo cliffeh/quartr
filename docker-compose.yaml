@@ -1,6 +1,6 @@
 services:
-  flaskr:
-    image: flaskr
+  quartr:
+    image: quartr
     build:
       context: .
       dockerfile: ./Dockerfile

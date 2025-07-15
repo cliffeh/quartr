@@ -14,7 +14,7 @@ code: venv ## open vscode
 .PHONY: code
 
 venv: pyproject.toml ## create a virtual environment
-	@python3 -mvenv --upgrade-deps --prompt flaskr venv
+	@python3 -mvenv --upgrade-deps --prompt quartr venv
 	@$(PIP) install -e .[dev]
 
 lint: ## run all linters (black, isort, mypy)
@@ -24,11 +24,11 @@ lint: ## run all linters (black, isort, mypy)
 .PHONY: lint
 
 routes: venv ## list routes
-	@$(QUART) --app flaskr routes
+	@$(QUART) --app quartr routes
 .PHONY: routes
 
 serve: venv ## run a hot-reloading development server
-	@$(QUART) --debug --app flaskr run --host localhost --port 5000 --reload
+	@$(QUART) --debug --app quartr run --host localhost --port 5000 --reload
 .PHONY: serve
 
 test: venv ## run unit tests
@@ -36,7 +36,7 @@ test: venv ## run unit tests
 .PHONY: test
 
 clean: ## clean up build directories and cache files
-	@rm -rf build src/flaskr.egg-info src/flaskr/__pycache__
+	@rm -rf build src/quartr.egg-info src/quartr/__pycache__
 .PHONY: build-clean
 
 venv-clean: ## delete the virtual environment

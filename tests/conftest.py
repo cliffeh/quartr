@@ -1,4 +1,4 @@
-from flaskr import create_app
+from quartr import create_app
 
 import pytest
 
