@@ -14,7 +14,15 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.optional-dependencies]
-dev = ["black", "flake8", "mypy", "isort", "pytest"]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+    "mypy",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+]
 
 [tool.black]
 line-length = 88

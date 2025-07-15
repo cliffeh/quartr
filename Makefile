@@ -31,6 +31,10 @@ serve: venv ## run a hot-reloading development server
 	@$(QUART) --debug --app flaskr run --host localhost --port 5000 --reload
 .PHONY: serve
 
+test: venv ## run unit tests
+	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
+.PHONY: test
+
 clean: ## clean up build directories and cache files
 	@rm -rf build src/flaskr.egg-info src/flaskr/__pycache__
 .PHONY: build-clean
