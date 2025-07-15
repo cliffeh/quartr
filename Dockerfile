@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -e .
 
 EXPOSE 5000
 
-CMD ["quart", "--app", "quartr", "run", "--host", "::", "--port", "5000"]
+CMD ["hypercorn", "quartr.asgi:app", "--bind", ":5000"]
