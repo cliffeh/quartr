@@ -32,7 +32,7 @@ serve: venv ## run a hot-reloading development server
 .PHONY: serve
 
 container: ## build a container image 
-	@docker-compose build
+	@docker compose build
 .PHONY: docker
 
 container-serve: container ## run the containerized app
