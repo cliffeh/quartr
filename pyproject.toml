@@ -27,10 +27,11 @@ dev = [
 [tool.black]
 line-length = 88
 target-version = ["py312"]
+exclude = "(venv|build)"
 
 [tool.isort]
 profile = "black"
-src_paths = ["src"]
+src_paths = ["src", "tests"]
 line_length = 88
 skip = ["venv", "build"]
 

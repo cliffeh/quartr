@@ -1,18 +1,19 @@
-from quartr import create_app
+from typing import TYPE_CHECKING
 
 import pytest
 
+from quartr import create_app
 
-@pytest.fixture
-def app():
-    test_config = {
-        "TESTING": True,
-    }
-    app = create_app(test_config=test_config)
-
-    yield app
+if TYPE_CHECKING:
+    from quart import Quart
+    from quart.typing import TestClientProtocol
 
 
 @pytest.fixture
-def client(app):
+def app() -> Quart:
+    return create_app()
+
+
+@pytest.fixture
+def client(app: Quart) -> TestClientProtocol:
     return app.test_client()

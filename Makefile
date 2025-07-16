@@ -18,9 +18,9 @@ venv: pyproject.toml ## create a virtual environment
 	@$(PIP) install -e .[dev]
 
 lint: ## run all linters (black, isort, mypy)
-	@$(BLACK) src
-	@$(ISORT) src
-	@$(MYPY) src
+	@$(BLACK) src tests
+	@$(ISORT) src tests
+	@$(MYPY) src tests
 .PHONY: lint
 
 routes: venv ## list routes
