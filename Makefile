@@ -32,11 +32,11 @@ serve: venv ## run a hot-reloading development server
 .PHONY: serve
 
 container: ## build a container image 
-	@docker compose build
+	@docker build -t quartr .
 .PHONY: docker
 
 container-serve: container ## run the containerized app
-	@docker compose up
+	@docker run --rm -p 5000:5000 quartr
 .PHONY: docker-serve
 
 test: venv ## run unit tests
