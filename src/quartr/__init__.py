@@ -1,4 +1,5 @@
-from quart import Quart, render_template
+from quart import Quart
+from .hello import blueprint as hello_blueprint
 
 
 def create_app(test_config=None):
@@ -15,8 +16,6 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-    @app.route("/hello", strict_slashes=False)
-    async def hello():
-        return "Hello, World!"
+    app.register_blueprint(hello_blueprint, url_prefix="/hello")
 
     return app
