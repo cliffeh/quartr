@@ -35,6 +35,5 @@ line_length = 88
 skip = ["venv", "build"]
 
 [tool.mypy]
-warn_return_any = true
-warn_unused_configs = true
+strict = true
 exclude = ["venv", "build"]

@@ -4,6 +4,6 @@ blueprint = Blueprint("hello", __name__)
 
 
 @blueprint.route("/", methods=["GET"], strict_slashes=False)
-async def hello():
+async def hello() -> str:
     name = request.args.get("name", "World")
     return f"Hello, {name}!"
