@@ -33,11 +33,11 @@ serve: venv ## run a hot-reloading development server
 
 container: ## build a container image 
 	@docker build -t quartr .
-.PHONY: docker
+.PHONY: container
 
 container-serve: container ## run the containerized app
 	@docker run --rm -p 5000:5000 quartr
-.PHONY: docker-serve
+.PHONY: container-serve
 
 test: venv ## run unit tests
 	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
