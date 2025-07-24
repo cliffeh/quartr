@@ -44,7 +44,7 @@ test: venv ## run unit tests
 .PHONY: test
 
 clean: ## clean up build directories and cache files
-	@rm -rf build src/quartr.egg-info src/quartr/__pycache__
+	@rm -rf build src/quartr.egg-info src/quartr/__pycache__ tests/__pycache__
 .PHONY: build-clean
 
 venv-clean: ## delete the virtual environment
