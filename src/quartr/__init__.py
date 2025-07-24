@@ -1,9 +1,5 @@
-from typing import TYPE_CHECKING
-
 from .hello import blueprint as hello_blueprint
-
-if TYPE_CHECKING:
-    from quart import Quart
+from quart import Quart
 
 
 def create_app() -> Quart:
