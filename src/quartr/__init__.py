@@ -1,5 +1,6 @@
-from .hello import blueprint as hello_blueprint
 from quart import Quart
+
+from .hello import blueprint as hello_blueprint
 
 
 def create_app() -> Quart:
