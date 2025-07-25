@@ -38,3 +38,6 @@ skip = ["venv", "build"]
 [tool.mypy]
 strict = true
 exclude = ["venv", "build"]
+
+[tool.coverage.run]
+omit = ["src/quartr/asgi.py"]

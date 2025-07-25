@@ -1,12 +1,8 @@
-from typing import TYPE_CHECKING
-
 import pytest
+from quart import Quart
+from quart.typing import TestClientProtocol
 
 from quartr import create_app
-
-if TYPE_CHECKING:
-    from quart import Quart
-    from quart.typing import TestClientProtocol
 
 
 @pytest.fixture

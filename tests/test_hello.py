@@ -1,9 +1,5 @@
-from typing import TYPE_CHECKING
-
 import pytest
-
-if TYPE_CHECKING:
-    from quart.typing import TestClientProtocol
+from quart.typing import TestClientProtocol
 
 
 @pytest.mark.asyncio
