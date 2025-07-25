@@ -3,5 +3,5 @@
 Example usage:
 
 ```bash
-helm upgrade quartr .helm/quart --install --namespace quartr --create-namespace
+helm upgrade quartr .helm/quartr --install --namespace quartr --create-namespace
 ```
