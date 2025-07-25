@@ -21,6 +21,9 @@ on:
       - "pyproject.toml"
       - ".github/workflows/pr-test.yaml"
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
