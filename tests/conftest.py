@@ -1,4 +1,5 @@
 import pytest
+from quart import Quart
 
 from quartr import create_app
 
@@ -9,5 +10,5 @@ def app():
 
 
 @pytest.fixture
-def client(app):
+def client(app: Quart):
     return app.test_client()
