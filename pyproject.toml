@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "quartr"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = ["quart==0.20.0", "hypercorn==0.17.3", "bump2version==1.0.1"]
 requires-python = ">=3.12"
 authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
