@@ -2,6 +2,8 @@ name: Build and Publish Container Image
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "v**"
 
@@ -21,7 +23,6 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/cliffeh/quartr
-          tags: ${{ github.ref_name }}
 
       # QEMU and buildx for multi-arch support
       - name: Set up QEMU
