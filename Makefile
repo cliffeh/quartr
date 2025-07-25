@@ -50,7 +50,7 @@ version: .bumpversion.cfg ## show the current version
 
 bump-version: lint test ## bump the version number and push a new version tag
 	@$(BUMP2VERSION) patch
-	@git push --tags
+	@git push origin main --tags
 .PHONY: bump-version
 
 test: venv ## run unit test suite
