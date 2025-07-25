@@ -19,8 +19,11 @@ venv: pyproject.toml ## create a virtual environment
 	@$(PIP) install -e .[dev]
 
 lint: venv ## run all linters (black, isort, mypy)
+	@echo "Running black..."
 	@$(BLACK) src tests
+	@echo "Running isort..."
 	@$(ISORT) src tests
+	@echo "Running mypy..."
 	@$(MYPY) src tests
 .PHONY: lint
 

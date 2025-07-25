@@ -39,7 +39,7 @@ jobs:
       - name: Lint code
         run: |
             echo "Running linters..." >> $GITHUB_STEP_SUMMARY
-            make lint >> $GITHUB_STEP_SUMMARY
+            make lint >> $GITHUB_STEP_SUMMARY 2>&1
 
       - name: Run tests and generate a coverage report
         run: |
