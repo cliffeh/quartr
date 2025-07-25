@@ -4,9 +4,22 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "Makefile"
+      - "pyproject.toml"
+      - ".github/workflows/pr-test.yaml"
+
   pull_request:
     branches:
       - main
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "Makefile"
+      - "pyproject.toml"
+      - ".github/workflows/pr-test.yaml"
 
 jobs:
   test:
@@ -24,7 +37,11 @@ jobs:
         run: make venv
     
       - name: Lint code
-        run: make lint
+        run: |
+            echo "Running linters..." >> $GITHUB_STEP_SUMMARY
+            make lint >> $GITHUB_STEP_SUMMARY
 
       - name: Run tests and generate a coverage report
-        run: make coverage
+        run: |
+            echo "Running tests..." >> $GITHUB_STEP_SUMMARY
+            make coverage >> $GITHUB_STEP_SUMMARY

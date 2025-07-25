@@ -5,6 +5,6 @@
 * Some stubbed-up bits around databases
 * Deployment manifests/helm chart for deployment
 * Basic example code for static file handling
-* GHA workflow for build/test/publish
+* GHA workflow for publishing container images
   * GHCR repo
   * mechanism for automatically handling release versioning
