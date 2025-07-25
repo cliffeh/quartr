@@ -6,6 +6,7 @@ QUART=venv/bin/quart
 BLACK=venv/bin/black
 ISORT=venv/bin/isort
 MYPY=venv/bin/mypy
+COV=venv/bin/coverage
 
 default: help
 
@@ -46,6 +47,9 @@ test: venv ## run unit test suite
 coverage: venv ## generate a test coverage report
 	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
 .PHONY: coverage
+
+coverage-md: coverage ## generate a test coverage report in markdown format
+	@$(COV) report --format=markdown
 
 clean: ## clean up build directories and cache files
 	@rm -rf build src/quartr.egg-info src/quartr/__pycache__ tests/__pycache__

@@ -44,4 +44,4 @@ jobs:
       - name: Run tests and generate a coverage report
         run: |
             echo "Running tests..." >> $GITHUB_STEP_SUMMARY
-            make coverage >> $GITHUB_STEP_SUMMARY
+            make coverage-md >> $GITHUB_STEP_SUMMARY
