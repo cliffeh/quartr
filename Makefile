@@ -17,7 +17,7 @@ venv: pyproject.toml ## create a virtual environment
 	@python3 -mvenv --upgrade-deps --prompt quartr venv
 	@$(PIP) install -e .[dev]
 
-lint: ## run all linters (black, isort, mypy)
+lint: venv ## run all linters (black, isort, mypy)
 	@$(BLACK) src tests
 	@$(ISORT) src tests
 	@$(MYPY) src tests
