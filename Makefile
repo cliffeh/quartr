@@ -48,7 +48,7 @@ version: .bumpversion.cfg ## show the current version
 	@grep current_version $< | head -1 | awk '{print $$3}'
 .PHONY: version
 
-bump-version: ## bump the version number and push a new version tag
+bump-version: lint test ## bump the version number and push a new version tag
 	@$(BUMP2VERSION) patch
 	@git push origin tag $(shell git describe --tags --abbrev=0)
 .PHONY: bump-version
