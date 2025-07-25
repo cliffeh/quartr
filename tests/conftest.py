@@ -6,7 +6,9 @@ from quartr.app import create_app
 
 @pytest.fixture
 def app():
-    return create_app()
+    app = create_app()
+    app.config["TESTING"] = True
+    return app
 
 
 @pytest.fixture
