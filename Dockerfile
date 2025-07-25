@@ -1,9 +1,6 @@
-FROM python:3.12-slim
+FROM python:3.13-alpine
 
 WORKDIR /app
-
-# Update system packages to reduce vulnerabilities
-RUN apt update && apt upgrade -y
 
 COPY . .
 
