@@ -2,10 +2,11 @@ PIP=venv/bin/pip
 PYTHON=venv/bin/python3
 QUART=venv/bin/quart
 
-# linters and test tools
+# linters and other tools
 BLACK=venv/bin/black
 ISORT=venv/bin/isort
 MYPY=venv/bin/mypy
+BUMP2VERSION=venv/bin/bump2version
 COV=venv/bin/coverage
 
 default: help
@@ -42,6 +43,15 @@ container: ## build a container image
 container-serve: container ## run the containerized app
 	@docker run --rm -p 5000:5000 quartr
 .PHONY: container-serve
+
+version: .bumpversion.cfg ## show the current version
+	@grep current_version $< | head -1 | awk '{print $$3}'
+.PHONY: version
+
+bump-version: ## bump the version number and push a new version tag
+	@$(BUMP2VERSION) patch
+	@git push origin tag $(shell git describe --tags --abbrev=0)
+.PHONY: bump-version
 
 test: venv ## run unit test suite
 	@$(PYTHON) -m pytest --asyncio-mode=auto tests
