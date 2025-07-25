@@ -28,7 +28,7 @@ routes: venv ## list routes
 .PHONY: routes
 
 serve: venv ## run a hot-reloading development server
-	@$(QUART) --debug --app quartr run --host localhost --port 5000 --reload
+	@$(QUART) --debug --app quartr.app run --host localhost --port 5000 --reload
 .PHONY: serve
 
 container: ## build a container image 

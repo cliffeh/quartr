@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "quartr"
 version = "0.0.1"
 dependencies = ["quart==0.20.0", "hypercorn==0.17.3"]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 maintainers = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 description = "Terraform Workspace Manager"
@@ -26,7 +26,7 @@ dev = [
 
 [tool.black]
 line-length = 88
-target-version = ["py312"]
+target-version = ["py313"]
 exclude = "(venv|build)"
 
 [tool.isort]
