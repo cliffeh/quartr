@@ -2,7 +2,7 @@ PIP=venv/bin/pip
 PYTHON=venv/bin/python3
 QUART=venv/bin/quart
 
-# linters
+# linters and test tools
 BLACK=venv/bin/black
 ISORT=venv/bin/isort
 MYPY=venv/bin/mypy
@@ -39,9 +39,13 @@ container-serve: container ## run the containerized app
 	@docker run --rm -p 5000:5000 quartr
 .PHONY: container-serve
 
-test: venv ## run unit tests
-	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
+test: venv ## run unit test suite
+	@$(PYTHON) -m pytest --asyncio-mode=auto tests
 .PHONY: test
+
+coverage: venv ## generate a test coverage report
+	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
+.PHONY: coverage
 
 clean: ## clean up build directories and cache files
 	@rm -rf build src/quartr.egg-info src/quartr/__pycache__ tests/__pycache__
