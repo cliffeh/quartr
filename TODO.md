@@ -5,3 +5,4 @@
 * Some stubbed-up bits around databases
 * Deployment manifests/helm chart for deployment
 * Basic example code for static file handling
+* .devcontainer config
