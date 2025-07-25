@@ -1,7 +1,7 @@
 import pytest
 from quart import Quart
 
-from quartr import create_app
+from quartr.app import create_app
 
 
 @pytest.fixture

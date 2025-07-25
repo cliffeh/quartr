@@ -15,5 +15,4 @@ Some of the things this repo has to offer:
 * A Dockerfile for containerizing the app
 * A basic [Makefile](./Makefile) with helpful build targets for local dev
 
-For some of the things I _want_ this repo to have, take a peek at
-[TODO.md](./TODO.md).
+For things I _want_ this repo to have, take a peek at [TODO.md](./TODO.md).
