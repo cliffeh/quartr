@@ -45,10 +45,12 @@ test: venv ## run unit test suite
 .PHONY: test
 
 coverage: venv ## generate a test coverage report
-	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto tests
+	@$(PYTHON) -m pytest --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto -q tests
 .PHONY: coverage
 
-coverage-md: coverage ## generate a test coverage report in markdown format
+# NB we do it this way rather than having a dependency on `coverage` so we can generate the coverage report silently
+coverage-md: ## generate a test coverage report in markdown format
+	@make -s coverage 1> /dev/null 2> /dev/null
 	@$(COV) report --format=markdown
 
 clean: ## clean up build directories and cache files
