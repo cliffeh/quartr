@@ -5,3 +5,4 @@
 * Some stubbed-up bits around databases
 * Basic example code for static file handling
 * .devcontainer config
+* health check blueprint & endpoint(s)
