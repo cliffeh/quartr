@@ -1,6 +1,7 @@
 from quart import Quart
 
-from .hello import blueprint as hello_blueprint
+from .blueprints.health import blueprint as health_blueprint
+from .blueprints.hello import blueprint as hello_blueprint
 
 
 def create_app() -> Quart:
@@ -8,6 +9,7 @@ def create_app() -> Quart:
     app = Quart(__name__)
     app.config.from_prefixed_env("QUARTR")
 
+    app.register_blueprint(health_blueprint)
     app.register_blueprint(hello_blueprint)
 
     return app

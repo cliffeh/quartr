@@ -11,3 +11,6 @@ service:
 
 nameOverride: ""
 fullnameOverride: ""
+
+env:
+  QUARTR_ENV: "production"
