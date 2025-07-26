@@ -15,9 +15,12 @@ code: venv ## open vscode
 	@code .
 .PHONY: code
 
-venv: pyproject.toml ## create a virtual environment
+venv: venv/bin/activate ## create a virtual environment
+
+venv/bin/activate: pyproject.toml
 	@python3 -mvenv --upgrade-deps --prompt quartr venv
 	@$(PIP) install -e .[dev]
+	@touch $@
 
 lint: venv ## run all linters (black, isort, mypy)
 	@echo "Running black..."
