@@ -9,14 +9,13 @@ dependencies = ["quart==0.20.0", "hypercorn==0.17.3", "bump2version==1.0.1"]
 requires-python = ">=3.12"
 authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 maintainers = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
-description = "Terraform Workspace Manager"
+description = "A quart template app"
 readme = "README.md"
 license = { text = "MIT" }
 
 [project.optional-dependencies]
 dev = [
     "black",
-    "flake8",
     "isort",
     "mypy",
     "pytest",
