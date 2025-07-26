@@ -1,3 +1,4 @@
+/.bumpversion.cfg
 /.dockerignore
 /.git*
 /.helm
@@ -6,6 +7,7 @@ Dockerfile
 /LICENSE
 /Makefile
 /README.md
+/TODO.md
 /tests
 /venv
 

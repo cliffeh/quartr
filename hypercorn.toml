@@ -1,0 +1,25 @@
+# Bind the server to a specific host and port
+bind = ["0.0.0.0:5000"]
+
+# Number of worker processes to use
+workers = 4
+
+# Enable debug mode for more detailed logging
+debug = false
+
+# Specify the target for access/error logs
+accesslog = "-" # Use "-" for stdout
+errorlog = "-"  # Use "-" for stderr
+
+# Specify the format for access logs
+access_log_format = '%(h)s %(r)s %(s)s %(b)s "%(f)s" "%(a)s"'
+
+# Enable SSL/TLS and specify certificate and key files
+# certfile = "/path/to/your/certificate.pem"
+# keyfile = "/path/to/your/key.pem"
+
+# Configure HTTP/2
+# alpn_protocols = ["h2", "http/1.1"]
+
+# Set a timeout for worker processes
+worker_timeout = 30
