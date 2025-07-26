@@ -2,7 +2,7 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY hypercorn.toml pyproject.toml src /app/
 
 RUN pip install --no-cache-dir .
 RUN adduser --disabled-password app
