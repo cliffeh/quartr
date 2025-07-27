@@ -70,7 +70,7 @@ coverage-md: ## generate a test coverage report in markdown format
 	@$(COV) report --format=markdown
 
 clean: ## clean up build directories and cache files
-	@rm -rf build src/quartr.egg-info src/quartr/__pycache__ tests/__pycache__
+	@find . | grep -E "(/__pycache__$$|\.pyc$$|\.pyo$$|\.egg-info$$)" | xargs rm -rf
 .PHONY: build-clean
 
 cov-clean: ## clean up coverage reports
