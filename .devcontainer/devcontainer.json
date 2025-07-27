@@ -5,19 +5,14 @@
 	// ref: https://containers.dev/guide/dockerfile
 	"build": {
 		"dockerfile": "Dockerfile",
-		"context": "..",
-		"args": {
-			"VARIANT": "3.12"
-		}
+		"context": ".."
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		5000
 	],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip install --user -e .[dev]",
-	// "postStartCommand": "quart --debug --app quartr.app run --host localhost --port 5000 --reload"
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// TODO get this working as a non-vscode user
 	// "remoteUser": "app"",
+	// Use CMD from Dockerfile to run the container.
 	"overrideCommand": false
 }

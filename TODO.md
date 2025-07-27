@@ -4,4 +4,6 @@
 * Some stubbed-up bits around databases
 * Basic example code for static file handling
 * mechanism for injecting secret key?
-* improve devcontainer config (extensions, etc)
+* improve devcontainer config
+  * extensions (black, isort, Makefile, better toml)
+  * maybe also publish a `quartr-dev` container?

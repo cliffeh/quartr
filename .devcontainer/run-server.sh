@@ -1,9 +1,6 @@
 #!/bin/bash
 
-WORKSPACE="/workspaces/quartr"
-
-cd "$WORKSPACE" || exit 1
-pip install --user -e .[dev]
+pip install --user --no-deps -e .[dev]
 
 while true; do
     quart --debug --app quartr.app run --host localhost --port 5000 --reload
