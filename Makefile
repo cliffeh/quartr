@@ -29,7 +29,7 @@ lint: venv ## run all linters (black, isort, mypy)
 .PHONY: lint
 
 routes: venv ## list routes
-	@$(QUART) --app quartr routes
+	@$(QUART) --app quartr.app routes --all-methods
 .PHONY: routes
 
 serve: venv ## run a hot-reloading development server
