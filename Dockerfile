@@ -5,11 +5,13 @@ WORKDIR /app
 RUN adduser --disabled-password app
 
 # install dependencies globally as root
-COPY --chown=app:app pyproject.toml .
+COPY pyproject.toml .
 RUN pip install --no-cache-dir --upgrade pip .
 
 # install the application code as app
-COPY --chown=app:app hypercorn.toml src /app/
+COPY hypercorn.toml src /app/
+# NB dependency install creates files the app user needs to be able to write to
+RUN chown -R app:app /app
 USER app
 RUN pip install --no-deps --user .
 
