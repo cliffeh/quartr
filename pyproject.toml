@@ -11,7 +11,7 @@ authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 maintainers = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 description = "A quart template app"
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 
 [project.optional-dependencies]
 dev = [
