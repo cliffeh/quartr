@@ -15,5 +15,9 @@
 		5000
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install --user -e .[dev]"
+	// "postCreateCommand": "pip install --user -e .[dev]",
+	// "postStartCommand": "quart --debug --app quartr.app run --host localhost --port 5000 --reload"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "app"",
+	"overrideCommand": false
 }
