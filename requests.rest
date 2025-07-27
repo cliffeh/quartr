@@ -1,0 +1,17 @@
+# for use with the REST Client extension in VS Code
+# ref: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+### Basic GET Request
+GET http://localhost:5000/hello
+
+### Request with Query Parameters
+GET http://localhost:5000/hello?name=Quartr
+
+### healthz
+GET http://localhost:5000/healthz
+
+### livez
+GET http://localhost:5000/livez
+
+### readyz
+GET http://localhost:5000/readyz
