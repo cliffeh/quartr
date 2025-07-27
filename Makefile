@@ -23,11 +23,8 @@ venv/bin/activate: pyproject.toml
 	@touch $@
 
 lint: venv ## run all linters (black, isort, mypy)
-	@echo "Running black..."
 	@$(BLACK) src tests
-	@echo "Running isort..."
 	@$(ISORT) src tests
-	@echo "Running mypy..."
 	@$(MYPY) src tests
 .PHONY: lint
 

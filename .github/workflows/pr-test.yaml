@@ -40,11 +40,7 @@ jobs:
         run: make venv
     
       - name: Lint code
-        run: |
-            echo "Running linters..." >> $GITHUB_STEP_SUMMARY
-            make lint >> $GITHUB_STEP_SUMMARY 2>&1
+        run: make lint
 
       - name: Run tests and generate a coverage report
-        run: |
-            echo "Running tests..." >> $GITHUB_STEP_SUMMARY
-            make coverage-md >> $GITHUB_STEP_SUMMARY
+        run: make coverage-md >> $GITHUB_STEP_SUMMARY
