@@ -8,6 +8,7 @@ RUN pip install --upgrade pip .[dev]
 
 EXPOSE 5000
 
+# NB this requires the local workspace to be mounted at /workspaces/quartr
 WORKDIR /workspaces/quartr
 USER vscode
 CMD [".devcontainer/run-server.sh"]

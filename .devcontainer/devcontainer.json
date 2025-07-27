@@ -11,8 +11,6 @@
 	"forwardPorts": [
 		5000
 	],
-	// TODO get this working as a non-vscode user
-	// "remoteUser": "app"",
 	// Use CMD from Dockerfile to run the container.
 	"overrideCommand": false
 }
