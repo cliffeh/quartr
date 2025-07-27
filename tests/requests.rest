@@ -1,17 +1,24 @@
 # for use with the REST Client extension in VS Code
 # ref: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
+@host = localhost
+@port = 5000
+
+# Hello World Endpoints
+
 ### Basic GET Request
-GET http://localhost:5000/hello
+GET http://{{host}}:{{port}}/hello
 
 ### Request with Query Parameters
-GET http://localhost:5000/hello?name=Quartr
+GET http://{{host}}:{{port}}/hello?name=Quartr
+
+# Health Checks
 
 ### healthz
-GET http://localhost:5000/healthz
+GET http://{{host}}:{{port}}/healthz
 
 ### livez
-GET http://localhost:5000/livez
+GET http://{{host}}:{{port}}/livez
 
 ### readyz
-GET http://localhost:5000/readyz
+GET http://{{host}}:{{port}}/readyz
