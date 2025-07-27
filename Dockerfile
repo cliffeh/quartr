@@ -2,16 +2,13 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir --upgrade pip setuptools
+RUN pip install --no-cache-dir --upgrade pip
 
-RUN adduser --disabled-password --home /app  app
+COPY hypercorn.toml pyproject.toml src ./
+RUN pip install --no-cache-dir .
 
-COPY hypercorn.toml pyproject.toml src /app/
-RUN chown -R app:app /app
+RUN adduser --disabled-password app
 USER app
-RUN pip install --no-cache-dir --user .
-
-ENV PATH="/app/.local/bin:${PATH}"
 
 EXPOSE 5000
 
