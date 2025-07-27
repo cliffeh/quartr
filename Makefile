@@ -73,11 +73,15 @@ clean: ## clean up build directories and cache files
 	@rm -rf build src/quartr.egg-info src/quartr/__pycache__ tests/__pycache__
 .PHONY: build-clean
 
+cov-clean: ## clean up coverage reports
+	@rm -rf .coverage htmlcov
+.PHONY: cov-clean
+
 venv-clean: ## delete the virtual environment
 	@rm -rf venv
 .PHONY: venv-clean
 
-realclean: clean venv-clean ## clean up All the Things
+realclean: clean cov-clean venv-clean ## clean up All the Things
 .PHONY: realclean
 
 help: ## show this help
