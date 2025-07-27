@@ -14,18 +14,11 @@ readme = "README.md"
 license = "MIT"
 
 [project.optional-dependencies]
-dev = [
-    "black",
-    "isort",
-    "mypy",
-    "pytest",
-    "pytest-asyncio",
-    "pytest-cov",
-]
+dev = ["black", "isort", "mypy", "pytest", "pytest-asyncio", "pytest-cov"]
 
 [tool.black]
 line-length = 88
-target-version = ["py313"]
+target-version = ["py312"]
 exclude = "(venv|build)"
 
 [tool.isort]
