@@ -8,6 +8,9 @@ RUN pip install --upgrade pip .[dev]
 
 EXPOSE 5000
 
+ENV QUARTR_ENV=development
+ENV IN_DEVCONTAINER=true
+
 # NB this requires the local workspace to be mounted at /workspaces/quartr
 WORKDIR /workspaces/quartr
 USER vscode

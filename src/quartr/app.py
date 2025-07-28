@@ -15,6 +15,7 @@ def create_app() -> Quart:
     app.config.from_prefixed_env("QUARTR")
 
     @app.route("/")
+    @app.route("/index.html")
     async def index():
         return await render_template("index.html")
 
