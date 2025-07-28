@@ -8,6 +8,7 @@ async def test_healthz(client) -> None:
     payload = await response.json
     assert isinstance(payload, dict)
     assert "status" in payload and payload["status"] == "ok"
+    assert "env" in payload and payload["env"] == "testing"
 
 
 @pytest.mark.asyncio
@@ -17,6 +18,7 @@ async def test_livez(client) -> None:
     payload = await response.json
     assert isinstance(payload, dict)
     assert "status" in payload and payload["status"] == "ok"
+    assert "env" in payload and payload["env"] == "testing"
 
 
 @pytest.mark.asyncio
@@ -26,3 +28,4 @@ async def test_readyz(client) -> None:
     payload = await response.json
     assert isinstance(payload, dict)
     assert "status" in payload and payload["status"] == "ok"
+    assert "env" in payload and payload["env"] == "testing"

@@ -32,7 +32,7 @@ help: ## show this help
 .PHONY: help
 
 venv/bin/%: pyproject.toml
-	@make -s -f venv.mk $@ --debug
+	@make -s -f venv.mk $@
 
 lint: $(BLACK) $(ISORT) $(MYPY) ## run all linters (black, isort, mypy)
 	@$(BLACK) src tests
