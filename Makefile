@@ -62,11 +62,11 @@ test: $(PYTEST) ## run unit test suite
 .PHONY: test
 
 htmlcov: $(PYTEST)
-	@$(PYTEST) --cov=src --asyncio-mode=auto -q tests 1> /dev/null 2> /dev/null
+	@$(PYTEST) --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto -q tests 1> /dev/null 2> /dev/null
 .PHONY: htmlcov
 
-coverage: $(PYTEST) htmlcov ## generate a test coverage report
-	@$(COV) report
+coverage: $(PYTEST) ## generate a test coverage report
+	@$(PYTEST) --cov=src --cov-report=term-missing --cov-report=html --asyncio-mode=auto -q tests
 
 # NB we do it this way rather than having a dependency on `coverage` so we can generate the coverage report silently
 coverage-md: $(COV) htmlcov ## generate a test coverage report in markdown format
