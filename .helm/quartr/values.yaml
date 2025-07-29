@@ -14,7 +14,7 @@ ingress:
   tls:
     enabled: true
     hosts:
-      - argocd
+      - quartr
 
 nameOverride: ""
 fullnameOverride: ""
