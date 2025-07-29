@@ -8,6 +8,14 @@ service:
   type: ClusterIP
   port: 5000
 
+ingress:
+  enabled: false
+  ingressClassName: ""
+  tls:
+    enabled: true
+    hosts:
+      - argocd
+
 nameOverride: ""
 fullnameOverride: ""
 
