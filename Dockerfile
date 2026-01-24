@@ -4,12 +4,18 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir --upgrade pip
 
-COPY hypercorn.toml pyproject.toml src ./
+COPY pyproject.toml src ./
 RUN pip install --no-cache-dir .
 
 RUN adduser --disabled-password app
 USER app
 
-EXPOSE 5000
+# defaults that can be overridden by build args
+ARG UVICORN_HOST="0.0.0.0"
+ARG UVICORN_PORT=5000
+ENV UVICORN_HOST=${UVICORN_HOST}
+ENV UVICORN_PORT=${UVICORN_PORT}
 
-CMD ["hypercorn", "quartr.asgi:app", "--config", "hypercorn.toml"]
+EXPOSE ${UVICORN_PORT}
+
+CMD ["uvicorn", "quartr.asgi:app"]
