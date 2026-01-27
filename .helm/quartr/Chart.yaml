@@ -1,6 +1,0 @@
-apiVersion: v2
-name: quartr
-description: A simple web app for serving Quart applications
-type: application
-version: 0.3.0
-appVersion: 0.3.0
