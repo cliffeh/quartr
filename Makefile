@@ -45,7 +45,7 @@ routes: $(QUART) ## list routes
 .PHONY: routes
 
 serve: $(QUART) ## run a hot-reloading development server
-	@$(QUART) --debug --app quartr.app run --host localhost --port 5000 --reload
+	@$(QUART) --debug --app quartr.app run --host localhost --port 8000 --reload
 .PHONY: serve
 
 version: .bumpversion.cfg ## show the current version
@@ -77,7 +77,7 @@ container: ## build a container image
 .PHONY: container
 
 container-serve: container ## run the containerized app
-	@docker run --rm -p 5000:5000 quartr
+	@docker run --rm -p 8000:8000 quartr
 .PHONY: container-serve
 
 clean: ## clean up build directories and cache files

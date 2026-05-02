@@ -6,7 +6,7 @@ WORKDIR /build
 COPY pyproject.toml .
 RUN pip install --upgrade pip .[dev]
 
-EXPOSE 5000
+EXPOSE 8000
 
 ENV QUARTR_ENV=development
 ENV IN_DEVCONTAINER=true
