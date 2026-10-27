@@ -5,7 +5,7 @@ ifeq ($(IN_DEVCONTAINER), true)
 
 	# linters and other tools
 	BLACK ?= $(shell which black)
-	BUMP2VERSION ?= $(shell which bump2version)
+	BUMPVERSION ?= $(shell which bump-my-version)
 	COV ?= $(shell which coverage)
 	ISORT ?= $(shell which isort)
 	MYPY ?= $(shell which mypy)
@@ -17,7 +17,7 @@ else
 
 	# linters and other tools
 	BLACK := venv/bin/black
-	BUMP2VERSION := venv/bin/bump2version
+	BUMPVERSION := venv/bin/bump-my-version
 	COV := venv/bin/coverage
 	ISORT := venv/bin/isort
 	MYPY := venv/bin/mypy
@@ -48,12 +48,12 @@ serve: $(QUART) ## run a hot-reloading development server
 	@$(QUART) --debug --app quartr.app run --host localhost --port 8000 --reload
 .PHONY: serve
 
-version: .bumpversion.cfg ## show the current version
-	@grep current_version $< | head -1 | awk '{print $$3}'
+version: $(BUMPVERSION) ## show the current version
+	@$(BUMPVERSION) show current_version
 .PHONY: version
 
-bump-version: lint test $(BUMP2VERSION) ## bump the version number and push a new version tag
-	@$(BUMP2VERSION) patch
+bump-version: lint test $(BUMPVERSION) ## bump the version number and push a new version tag
+	@$(BUMPVERSION) bump patch
 	@git push origin main --tags
 .PHONY: bump-version
 

@@ -1,4 +1,4 @@
-CMDS = black bump2version coverage isort mypy pip3 pytest quart
+CMDS = black bump-my-version coverage isort mypy pip3 pytest quart
 CMDS := $(addprefix venv/bin/, $(CMDS))
 
 venv-help: ## show help for venv commands
