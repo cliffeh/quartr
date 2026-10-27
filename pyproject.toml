@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "quartr"
 version = "0.3.5"
 dependencies = ["quart==0.23.1", "uvicorn==0.54.0"]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 authors = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 maintainers = [{ name = "Cliff Snyder", email = "cliff.snyder@gmail.com" }]
 description = "A quart template app"
@@ -26,7 +26,7 @@ dev = [
 
 [tool.black]
 line-length = 88
-target-version = ["py312"]
+target-version = ["py313"]
 exclude = "(venv|build)"
 
 [tool.isort]
