@@ -9,6 +9,7 @@ on:
       - "tests/**"
       - "Makefile"
       - "pyproject.toml"
+      - "uv.lock"
       - ".github/workflows/pr-test.yaml"
 
   pull_request:
@@ -19,6 +20,7 @@ on:
       - "tests/**"
       - "Makefile"
       - "pyproject.toml"
+      - "uv.lock"
       - ".github/workflows/pr-test.yaml"
 
 permissions:
@@ -31,13 +33,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10.4.0
         with:
           python-version: "3.13"
 
-      - name: Create virtual environment and install dependencies
-        run: make -f venv.mk venv
+      - name: Install dependencies
+        run: uv sync --locked
 
       - name: Lint code
         run: make lint

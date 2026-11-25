@@ -11,6 +11,10 @@ Some of the things this repo has to offer:
 * A Dockerfile for containerizing the app and running it under hypercorn
 * A fully-functioning devcontainer configuration
 
+You'll need [uv](https://docs.astral.sh/uv/getting-started/installation/)
+installed; `make sync` (or `uv sync`) will create a virtual environment with
+all of the dependencies.
+
 Take a look at the [Makefile](./Makefile) or do `make help` for guidance on how
 to build and run quartr.
 

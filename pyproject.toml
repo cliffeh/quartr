@@ -13,7 +13,7 @@ description = "A quart template app"
 readme = "README.md"
 license = "MIT"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "black",
     "bump-my-version",
@@ -40,19 +40,26 @@ regex = true
 [[tool.bumpversion.files]]
 filename = ".deploy/quartr/Chart.yaml"
 
+[[tool.bumpversion.files]]
+filename = "uv.lock"
+search = """name = "quartr"
+version = "{current_version}\""""
+replace = """name = "quartr"
+version = "{new_version}\""""
+
 [tool.black]
 line-length = 88
 target-version = ["py313"]
-exclude = "(venv|build)"
+exclude = "(\\.venv|build)"
 
 [tool.isort]
 profile = "black"
 src_paths = ["src", "tests"]
 line_length = 88
-skip = ["venv", "build"]
+skip = [".venv", "build"]
 
 [tool.mypy]
-exclude = ["venv", "build"]
+exclude = [".venv", "build"]
 
 [tool.coverage.run]
 omit = ["src/quartr/asgi.py"]
